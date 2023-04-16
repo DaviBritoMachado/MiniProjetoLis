@@ -4,6 +4,11 @@
 #include <locale.h>
 #define MAX 60
 
+/*Desenvolvedores:
+Davi Brito Machado - RGM: 29469970
+Djalma Felipe de Souza Neto - RGM: 30262585
+Lucas Bezerra dos Santos - RGM: 29469970
+*/
 typedef struct disciplinas{ //Estrutura com o nome da disciplina, nota da disciplina e endereço para proximo elemento da lista
 	char disciplina[50];
 	float nota;
@@ -14,8 +19,8 @@ typedef struct aluno{ //Estrutura com as informações do aluno
 	char rgm[8];
 	char nome[50];
 	materia *disciplinas;
-	int num_Disci; 
-	struct aluno * prox;
+	int num_Disci;
+	materia * ultimo;
 }alu;
 
 typedef struct list{ //Lista sequencial de alunos
@@ -44,19 +49,17 @@ int addRGM(char rg[8],char nome[50], lis * p){ //Adiciona um RGM à lista
 	return 1;
 }
 void adicionar_disciplina(alu *aluno, char *disciplina, float nota) { //Adiciona uma disciplina e uma nota à lista encadeada
-    if(aluno->num_Disci == 0){ //Adição da primeria disciplina
-    	materia *nova_disciplina = (materia*) malloc(sizeof(materia));
-    	strcpy(nova_disciplina->disciplina, disciplina);
-    	nova_disciplina->nota = nota;
-    	nova_disciplina->prox = NULL;
-    	aluno->disciplinas = nova_disciplina;
-    	aluno->num_Disci = 1;
-	}else{
-	materia *nova_disciplina = (materia*) malloc(sizeof(materia));
-    strcpy(nova_disciplina->disciplina, disciplina);
+    materia *nova_disciplina = (materia*) malloc(sizeof(materia));
+	strcpy(nova_disciplina->disciplina, disciplina);
     nova_disciplina->nota = nota;
-    nova_disciplina->prox = aluno->disciplinas;
-    aluno->disciplinas = nova_disciplina;
+	nova_disciplina->prox = NULL;
+    if(aluno->num_Disci == 0){ //Adição da primeria disciplina
+		aluno->disciplinas = nova_disciplina;
+    	aluno->ultimo = nova_disciplina;
+	   	aluno->num_Disci = 1;
+	}else{
+    	materia * alun = aluno->ultimo;
+    	alun->prox = nova_disciplina;
     }
 }
 
@@ -249,7 +252,7 @@ int main() {
 			}
 			
 			case 7:{
-				men = 6;
+				men = 7;
 				break;
 			}
 		}
