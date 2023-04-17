@@ -5,7 +5,7 @@
 #define MAX 60
 
 /*Desenvolvedores:
-Davi Brito Machado - RGM: 29469970
+Davi Brito Machado - RGM: 30116104
 Djalma Felipe de Souza Neto - RGM: 30262585
 Lucas Bezerra dos Santos - RGM: 29469970
 */
