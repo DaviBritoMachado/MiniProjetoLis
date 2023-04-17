@@ -129,6 +129,7 @@ int main() {
 		system("cls");
 		switch(men){
 			case 1:{
+				// 1 para vizualiar a lista
 				printf("\t\t\t\t\t\tLista de Alunos\n");
 				int i = 0;
                 for ( i = 0; i <= List.n; i++) {
@@ -150,6 +151,7 @@ int main() {
                 break;
 			}
 			case 2:{
+				// 2 para adicionar um RGM a lista
 				 printf("\t\t\t\t\t\tLista de Alunos\n");
                 if(cheioRG(&List) == 0){
                     printf("\tDigite o RGM: ");
@@ -170,6 +172,7 @@ int main() {
      		break;
 			}
 			case 3:{
+				// 3 para procurar por um RGM
 				printf("\t\t\t\t\t\tLista de Alunos\n");
                 printf("\tDigite o RGM: ");
                 scanf("%s", RG);
@@ -195,6 +198,7 @@ int main() {
                 break;
 			}
 			case 4:{
+				// 4 para adicionar disciplina(s) a algum RGM
 				printf("\t\t\t\t\t\tLista de Alunos\n");
                 printf("\tDigite o RGM: ");
                 scanf("%s", RG);
@@ -222,6 +226,7 @@ int main() {
                break;
 			}
 			case 5:{
+				// 5 Apagar aluno pelo RGM
 				printf("\tDigite o RGM do aluno que deseja remover: ");
                 scanf("%s", RG);
                 
@@ -235,6 +240,7 @@ int main() {
                 break;
 			}
 			case 6:{
+				// 6 Apagar alguma disciplina por RGM
 				printf("\tDigite o RGM do aluno: ");
                 scanf("%s", RG);
                 printf("\tDigite o nome da disciplina: ");
@@ -252,6 +258,7 @@ int main() {
 			}
 			
 			case 7:{
+				// 7 Encerrar Programa
 				men = 7;
 				break;
 			}
