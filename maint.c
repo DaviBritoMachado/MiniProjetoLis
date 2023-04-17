@@ -60,6 +60,7 @@ void adicionar_disciplina(alu *aluno, char *disciplina, float nota) { //Adiciona
 	}else{
     	materia * alun = aluno->ultimo;
     	alun->prox = nova_disciplina;
+	aluno->ultimo = nova_disciplina;
     }
 }
 
